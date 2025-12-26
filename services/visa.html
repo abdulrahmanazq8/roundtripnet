@@ -3,23 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Round Trip | خدمات التأشيرات</title>
+  <title>Round Trip | التأشيرات</title>
 
-  <!-- CSS الرئيسي (مهم) -->
-  <link rel="stylesheet" href="../../assets/css/style.css?v=1" />
-
-  <!-- Fonts / Icons (اختياري لو مستخدمهم بالستايل) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../../assets/css/style.css?v=1" />
 </head>
 
 <body>
-  <!-- Header (نفس ستايل موقعك) -->
   <header class="header">
     <div class="logo-container" onclick="window.location.href='../../index.html'">
-      <img src="../../assets/logo.png" alt="Round Trip" class="logo" onerror="this.style.display='none'">
+      <img src="../../assets/logo.png" class="logo" alt="Round Trip" onerror="this.style.display='none'">
       <div class="company-info">
         <div class="company-name-ar">راوند تريب</div>
         <div class="company-name-en english-font">ROUND TRIP</div>
@@ -36,122 +33,98 @@
 
   <div class="page-header">
     <h1 class="page-title">خدمات التأشيرات</h1>
-    <p class="page-subtitle">نقدم خدمات استخراج التأشيرات لدول العالم بسرعة واحترافية</p>
+    <p class="page-subtitle">طلب التأشيرة بسهولة ومتابعة كاملة</p>
     <a class="back-btn" href="../../index.html"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
   </div>
 
   <main class="page-content">
     <div class="container">
       <div class="booking-section">
-        <h2 class="section-title">طلب تأشيرة سفر</h2>
+        <h2 class="section-title">طلب تأشيرة</h2>
 
-        <form id="visaForm">
+        <form id="vForm">
           <div class="form-row">
             <div class="form-group">
-              <label for="visaName" class="required">الاسم</label>
-              <input type="text" id="visaName" name="visaName" required placeholder="أدخل اسمك">
+              <label class="required" for="name">الاسم</label>
+              <input id="name" name="name" required>
             </div>
-
             <div class="form-group">
-              <label for="visaPhone" class="required">رقم الهاتف</label>
-              <input type="tel" id="visaPhone" name="visaPhone" required placeholder="ادخل رقم الهاتف">
+              <label class="required" for="phone">رقم الهاتف</label>
+              <input id="phone" name="phone" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="visaEmail">البريد الإلكتروني (اختياري)</label>
-              <input type="email" id="visaEmail" name="visaEmail" placeholder="name@example.com">
+              <label for="email">البريد (اختياري)</label>
+              <input type="email" id="email" name="email" placeholder="name@example.com">
             </div>
-
             <div class="form-group">
-              <label for="visaNationality" class="required">الجنسية</label>
-              <input type="text" id="visaNationality" name="visaNationality" required placeholder="جنسيتك الحالية">
+              <label class="required" for="nat">الجنسية</label>
+              <input id="nat" name="nat" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="visaDestination" class="required">الدولة المراد السفر إليها</label>
-              <input type="text" id="visaDestination" name="visaDestination" required placeholder="الدولة التي تريد السفر إليها">
+              <label class="required" for="dest">الدولة المراد السفر إليها</label>
+              <input id="dest" name="dest" required>
             </div>
-
-            <div class="form-group date-time-input">
-              <label for="visaTravelDate" class="required">تاريخ السفر المتوقع</label>
-              <input type="date" id="visaTravelDate" name="visaTravelDate" required>
+            <div class="form-group">
+              <label class="required" for="date">تاريخ السفر المتوقع</label>
+              <input type="date" id="date" name="date" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="visaPeople" class="required">عدد الأشخاص</label>
-              <input type="number" id="visaPeople" name="visaPeople" min="1" required placeholder="مثال: 2">
+              <label class="required" for="people">عدد الأشخاص</label>
+              <input type="number" id="people" name="people" min="1" required>
             </div>
-
             <div class="form-group">
-              <label for="visaType">نوع التأشيرة المطلوبة</label>
-              <select id="visaType" name="visaType">
-                <option value="">اختر نوع التأشيرة</option>
-                <option value="سياحية">سياحية</option>
-                <option value="عمل">عمل</option>
-                <option value="زيارة">زيارة</option>
-                <option value="علاج">علاج</option>
-                <option value="دراسة">دراسة</option>
+              <label for="type">نوع التأشيرة</label>
+              <select id="type" name="type">
+                <option value="">اختر</option>
+                <option>سياحية</option>
+                <option>عمل</option>
+                <option>زيارة</option>
+                <option>علاج</option>
+                <option>دراسة</option>
               </select>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="visaNotes">ملاحظات إضافية</label>
-            <textarea id="visaNotes" name="visaNotes" rows="4" placeholder="أي تفاصيل إضافية أو طلبات خاصة..."></textarea>
+            <label for="notes">ملاحظات</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
           </div>
 
-          <button type="submit" class="submit-btn">
-            <i class="fab fa-whatsapp whatsapp-icon"></i> إرسال طلب التأشيرة
+          <button class="submit-btn" type="submit">
+            <i class="fab fa-whatsapp"></i> إرسال الطلب على واتساب
           </button>
         </form>
-
-        <div class="form-instructions">
-          <h4><i class="fas fa-info-circle"></i> كيفية إكمال الحجز:</h4>
-          <ol>
-            <li>املأ جميع البيانات المطلوبة</li>
-            <li>اضغط إرسال</li>
-            <li>يفتح واتساب والرسالة جاهزة</li>
-            <li>اضغط إرسال</li>
-          </ol>
-        </div>
       </div>
     </div>
   </main>
 
-  <!-- JS الرئيسي -->
-  <script src="../../assets/js/main.js?v=1" defer></script>
-
-  <!-- fallback: لو ما عندك main.js فيه إرسال واتساب، هذا يشغّلها -->
+  <script src="../../assets/js/main.js?v=1"></script>
   <script>
-    document.getElementById('visaForm')?.addEventListener('submit', function(e){
+    document.getElementById("vForm").addEventListener("submit",(e)=>{
       e.preventDefault();
       const d = Object.fromEntries(new FormData(e.target).entries());
-      const now = new Date().toLocaleString('en-GB');
       const msg =
-`طلب تأشيرة سفر - راوند تريب
+`طلب تأشيرة - راوند تريب
 
-الاسم: ${d.visaName||''}
-رقم التواصل: ${d.visaPhone||''}
-البريد: ${d.visaEmail||'غير محدد'}
-الجنسية: ${d.visaNationality||''}
-
-الدولة: ${d.visaDestination||''}
-تاريخ السفر: ${d.visaTravelDate||''}
-عدد الأشخاص: ${d.visaPeople||''}
-نوع التأشيرة: ${d.visaType||'غير محدد'}
-
-ملاحظات:
-${d.visaNotes||'لا توجد'}
-
-وقت الإرسال: ${now}`;
-      const url = "https://wa.me/96565750302?text=" + encodeURIComponent(msg);
-      window.open(url, "_blank");
+الاسم: ${d.name}
+رقم: ${d.phone}
+البريد: ${d.email || "غير محدد"}
+الجنسية: ${d.nat}
+الدولة: ${d.dest}
+تاريخ السفر: ${d.date}
+عدد الأشخاص: ${d.people}
+نوع التأشيرة: ${d.type || "غير محدد"}
+ملاحظات: ${d.notes || "لا يوجد"}`;
+      sendToWhatsApp(msg);
     });
   </script>
 </body>
