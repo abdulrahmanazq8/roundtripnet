@@ -1,134 +1,111 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شهر العسل | راوند تريب</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Round Trip | شهر العسل</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=1" />
 </head>
+
 <body>
-
-<header class="header">
-  <a class="logo-container" href="../index.html" style="text-decoration:none">
-    <img src="../assets/images/logo.png" alt="شعار راوند تريب" class="logo" onerror="this.style.display='none'">
-    <div class="company-info">
-      <div class="company-name-ar">راوند تريب</div>
-      <div class="company-name-en english-font">ROUND TRIP</div>
-      <div class="company-tagline">رحلات لا تُنسى، تجارب استثنائية</div>
-    </div>
-  </a>
-
-  <div class="contact-header">
-    <div class="whatsapp-btn pulse" data-whatsapp="96565750302">
-      <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
-    </div>
-  </div>
-</header>
-
-<div class="page-header">
-  <h1 class="page-title">رحلات شهر العسل</h1>
-  <p class="page-subtitle">باقات خاصة للأزواج مع إضافات رومانسية في أجمل الوجهات العالمية</p>
-  <a class="back-btn" href="../index.html"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
-</div>
-
-<div class="page-content">
-  <div class="container">
-    <div class="booking-section">
-      <h2 class="section-title">طلب رحلة شهر العسل</h2>
-
-      <form id="honeymoonForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="honeymoonName" class="required">الاسم</label>
-            <input type="text" id="honeymoonName" name="honeymoonName" required placeholder="أدخل اسمك">
-          </div>
-          <div class="form-group">
-            <label for="honeymoonPhone" class="required" style="text-align:right;">رقم الهاتف</label>
-            <input type="tel" id="honeymoonPhone" name="honeymoonPhone" required placeholder="ادخل رقم الهاتف">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="honeymoonEmail">البريد الإلكتروني (اختياري)</label>
-            <input type="email" id="honeymoonEmail" name="honeymoonEmail" placeholder="name@example.com">
-          </div>
-          <div class="form-group">
-            <label for="honeymoonDestination">الوجهة المطلوبة</label>
-            <input type="text" id="honeymoonDestination" name="honeymoonDestination" placeholder="اذكر الوجهة المطلوبة">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group date-time-input">
-            <label for="honeymoonStartDate" class="required">تاريخ السفر المتوقع</label>
-            <input type="date" id="honeymoonStartDate" name="honeymoonStartDate" required>
-          </div>
-
-          <div class="form-group">
-            <label for="honeymoonDuration" class="required">مدة الرحلة (أيام)</label>
-            <input type="number" id="honeymoonDuration" name="honeymoonDuration" min="3" required placeholder="مثال: 7">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="honeymoonBudget">الميزانية التقريبية</label>
-            <div class="budget-currency-container">
-              <input type="number" id="honeymoonBudget" name="honeymoonBudget" placeholder="المبلغ">
-              <select id="honeymoonCurrency" name="honeymoonCurrency">
-                <option value="دينار كويتي">دينار كويتي</option>
-                <option value="ريال سعودي">ريال سعودي</option>
-                <option value="درهم إماراتي">درهم إماراتي</option>
-                <option value="دولار أمريكي">دولار أمريكي</option>
-                <option value="يورو">يورو</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>الخدمات المطلوبة (يمكن اختيار أكثر من واحد)</label>
-          <div class="checkbox-group">
-            <div class="checkbox-item"><input type="checkbox" id="serviceHotel" name="honeymoonService" value="فنادق"><label for="serviceHotel">فنادق</label></div>
-            <div class="checkbox-item"><input type="checkbox" id="serviceTransport" name="honeymoonService" value="سيارة ومواصلات"><label for="serviceTransport">سيارة ومواصلات</label></div>
-            <div class="checkbox-item"><input type="checkbox" id="serviceItinerary" name="honeymoonService" value="جدول تفصيلي"><label for="serviceItinerary">جدول تفصيلي</label></div>
-            <div class="checkbox-item"><input type="checkbox" id="serviceVisa" name="honeymoonService" value="فيزا"><label for="serviceVisa">فيزا</label></div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="honeymoonSpecialRequests">طلبات خاصة</label>
-          <textarea id="honeymoonSpecialRequests" name="honeymoonSpecialRequests" rows="4" placeholder="مثل: الافطار مع الحجز - غرف مع اطلالة - تجهيز الورود"></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">
-          <i class="fab fa-whatsapp whatsapp-icon"></i> إرسال طلب رحلة شهر العسل
-        </button>
-      </form>
-
-      <div class="form-instructions">
-        <h4><i class="fas fa-info-circle"></i> كيفية إكمال الحجز:</h4>
-        <ol>
-          <li>املأ جميع البيانات المطلوبة في النموذج أعلاه</li>
-          <li>اضغط على زر "إرسال طلب رحلة شهر العسل"</li>
-          <li>سيتم فتح تطبيق واتساب على جهازك تلقائياً</li>
-          <li>ستجد الرسالة جاهزة مع كل بياناتك، فقط اضغط "إرسال"</li>
-          <li>سنتصل بك خلال 24 ساعة لتأكيد الحجز وتفاصيل الدفع</li>
-        </ol>
+  <header class="header">
+    <div class="logo-container" onclick="window.location.href='../../index.html'">
+      <img src="../../assets/logo.png" class="logo" alt="Round Trip" onerror="this.style.display='none'">
+      <div class="company-info">
+        <div class="company-name-ar">راوند تريب</div>
+        <div class="company-name-en english-font">ROUND TRIP</div>
+        <div class="company-tagline">رحلات لا تُنسى، تجارب استثنائية</div>
       </div>
     </div>
+
+    <div class="contact-header">
+      <a class="whatsapp-btn" href="https://wa.me/96565750302" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+      </a>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1 class="page-title">رحلات شهر العسل</h1>
+    <p class="page-subtitle">باقات خاصة للأزواج وتجهيزات رومانسية</p>
+    <a class="back-btn" href="../../index.html"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
   </div>
-</div>
 
-<footer class="footer"><div class="copyright"><p>© 2026 راوند تريب - جميع الحقوق محفوظة.</p></div></footer>
+  <main class="page-content">
+    <div class="container">
+      <div class="booking-section">
+        <h2 class="section-title">طلب شهر العسل</h2>
 
-<script src="../assets/js/main.js"></script>
+        <form id="hmForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required" for="name">الاسم</label>
+              <input id="name" name="name" required placeholder="أدخل اسمك">
+            </div>
+            <div class="form-group">
+              <label class="required" for="phone">رقم الهاتف</label>
+              <input id="phone" name="phone" required placeholder="ادخل رقم الهاتف">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="dest">الوجهة</label>
+              <input id="dest" name="dest" placeholder="مثال: موريشيوس">
+            </div>
+            <div class="form-group">
+              <label class="required" for="date">تاريخ السفر</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required" for="days">المدة (أيام)</label>
+              <input type="number" id="days" name="days" min="3" required placeholder="مثال: 7">
+            </div>
+            <div class="form-group">
+              <label for="budget">الميزانية</label>
+              <input id="budget" name="budget" placeholder="مثال: 900 دينار">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">طلبات خاصة</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="ورد، كيك، إطلالة..."></textarea>
+          </div>
+
+          <button class="submit-btn" type="submit">
+            <i class="fab fa-whatsapp"></i> إرسال الطلب على واتساب
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/main.js?v=1"></script>
+  <script>
+    document.getElementById("hmForm").addEventListener("submit", (e)=>{
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(e.target).entries());
+      const msg =
+`طلب شهر العسل - راوند تريب
+
+الاسم: ${d.name}
+رقم: ${d.phone}
+الوجهة: ${d.dest || "غير محدد"}
+تاريخ السفر: ${d.date}
+المدة: ${d.days} يوم
+الميزانية: ${d.budget || "غير محدد"}
+طلبات خاصة: ${d.notes || "لا يوجد"}`;
+      sendToWhatsApp(msg);
+    });
+  </script>
 </body>
 </html>
