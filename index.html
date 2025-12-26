@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>راوند تريب - لتنظيم الرحلات السياحية</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,141 +10,149 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- CSS الرئيسي -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1">
 </head>
+
 <body>
+  <!-- الهيدر -->
+  <header class="header">
+    <a class="logo-container" href="index.html" style="text-decoration:none;">
+      <img src="assets/logo.png" alt="شعار راوند تريب" class="logo" onerror="this.style.display='none'">
 
-<header class="header">
-  <a class="logo-container" href="index.html" style="text-decoration:none">
-    <img src="assets/images/logo.png" alt="شعار راوند تريب" class="logo" onerror="this.style.display='none'">
-    <div class="company-info">
-      <div class="company-name-ar">راوند تريب</div>
-      <div class="company-name-en english-font">ROUND TRIP</div>
-      <div class="company-tagline">رحلات لا تُنسى، تجارب استثنائية</div>
-    </div>
-  </a>
+      <div class="company-info">
+        <div class="company-name-ar">راوند تريب</div>
+        <div class="company-name-en english-font">ROUND TRIP</div>
+        <div class="company-tagline">رحلات لا تُنسى، تجارب استثنائية</div>
+      </div>
+    </a>
 
-  <div class="contact-header">
-    <div class="whatsapp-btn pulse" data-whatsapp="96565750302">
-      <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
-    </div>
-
-    <div class="phone-numbers-container">
-      <div class="phone-number" data-whatsapp="96565750302">
-        <img src="https://flagcdn.com/w20/kw.png" class="flag-icon" alt="علم الكويت">
-        <a href="https://wa.me/96565750302" target="_blank" rel="noopener">+965 65750302</a>
+    <div class="contact-header">
+      <div class="whatsapp-btn pulse" onclick="openWhatsApp('96565750302')">
+        <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
       </div>
 
-      <div class="phone-number" data-whatsapp="966569425758">
-        <img src="https://flagcdn.com/w20/sa.png" class="flag-icon" alt="علم السعودية">
-        <a href="https://wa.me/966569425758" target="_blank" rel="noopener">+966 569425758</a>
+      <div class="phone-numbers-container">
+        <div class="phone-number" onclick="openWhatsApp('96565750302')">
+          <img src="https://flagcdn.com/w20/kw.png" class="flag-icon" alt="علم الكويت">
+          <a href="https://wa.me/96565750302" target="_blank" rel="noopener">+965 65750302</a>
+        </div>
+
+        <div class="phone-number" onclick="openWhatsApp('966569425758')">
+          <img src="https://flagcdn.com/w20/sa.png" class="flag-icon" alt="علم السعودية">
+          <a href="https://wa.me/966569425758" target="_blank" rel="noopener">+966 569425758</a>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<section class="banner">
-  <div class="banner-content">
-    <h1>استمتع برحلتك مع راوند تريب</h1>
-    <p>نخطط لرحلاتك بدقة فائقة، نضمن لك راحة تامة وتجربة سفر استثنائية تتناسب مع تطلعاتك وميزانيتك</p>
-    <a href="#services" class="whatsapp-btn" style="background: linear-gradient(135deg, var(--olive-dark), var(--sage-green)); padding: 18px 40px; font-size: 18px;">
-      ابدأ رحلتك الآن <i class="fas fa-plane"></i>
-    </a>
-  </div>
-</section>
-
-<div class="container" id="services">
-  <h2 class="section-title">خدماتنا المميزة</h2>
-
-  <div class="services">
-    <a class="service-card" href="services/car-rental.html" style="text-decoration:none">
-      <div class="service-icon"><i class="fas fa-car"></i></div>
-      <h3>تأجير السيارات</h3>
-      <div class="service-description">خدمات تأجير سيارات بمواصفات عالية في المطارات وأهم المدن حول العالم بأسعار منافسة</div>
-      <span class="service-link">احجز سيارتك <i class="fas fa-arrow-left"></i></span>
-    </a>
-
-    <a class="service-card" href="services/driver.html" style="text-decoration:none">
-      <div class="service-icon"><i class="fas fa-car-side"></i></div>
-      <h3>تأجير سيارات مع سائق</h3>
-      <div class="service-description">خدمة تأجير سيارات مع سائق خاص، استقبال وتوديع من المطار، جولات سياحية مرنة</div>
-      <span class="service-link">احجز مع سائق <i class="fas fa-arrow-left"></i></span>
-    </a>
-
-    <a class="service-card" href="services/honeymoon.html" style="text-decoration:none">
-      <div class="service-icon"><i class="fas fa-heart"></i></div>
-      <h3>رحلات شهر العسل</h3>
-      <div class="service-description">باقات خاصة للأزواج مع إضافات رومانسية في أجمل الوجهات العالمية لتجربة لا تُنسى</div>
-      <span class="service-link">احجز رحلة شهر العسل <i class="fas fa-arrow-left"></i></span>
-    </a>
-
-    <a class="service-card" href="services/tours.html" style="text-decoration:none">
-      <div class="service-icon"><i class="fas fa-suitcase-rolling"></i></div>
-      <h3>تنظيم الرحلات والفعاليات</h3>
-      <div class="service-description">تنظيم برامج سياحية مخصصة، حجوزات تذاكر معالم سياحية وفعاليات وأنشطة ترفيهية</div>
-      <span class="service-link">نظم رحلتك <i class="fas fa-arrow-left"></i></span>
-    </a>
-
-    <a class="service-card" href="services/visa.html" style="text-decoration:none">
-      <div class="service-icon"><i class="fas fa-passport"></i></div>
-      <h3>تأشيرات السفر</h3>
-      <div class="service-description">خدمات استخراج التأشيرات بكل يسر وسهولة لأغلب دول العالم مع متابعة حتى الاستلام</div>
-      <span class="service-link">استعرض التأشيرات <i class="fas fa-arrow-left"></i></span>
-    </a>
-
-    <a class="service-card" href="services/hotel.html" style="text-decoration:none">
-      <div class="service-icon"><i class="fas fa-hotel"></i></div>
-      <h3>حجوزات فنادق</h3>
-      <div class="service-description">فنادق ومنتجعات فاخرة تناسب جميع الميزانيات في أهم الوجهات العالمية مع أفضل العروض</div>
-      <span class="service-link">احجز فندقك <i class="fas fa-arrow-left"></i></span>
-    </a>
-  </div>
-</div>
-
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3>راوند تريب</h3>
-      <p>خبراء في تنظيم الرحلات السياحية بشكل كامل ، نقدم خدمات حجوزات فنادق وتأشيرات وتأجير سيارات وباقات سياحية مفصلة. نضمن لعملائنا تجربة سفر استثنائية بأسعار تنافسية وخدمة مميزة.</p>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/roundtripco" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@roundtripco" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.snapchat.com/add/roundtripco" target="_blank" rel="noopener"><i class="fab fa-snapchat"></i></a>
-      </div>
+  <!-- البانر -->
+  <section class="banner">
+    <div class="banner-content">
+      <h1>استمتع برحلتك مع راوند تريب</h1>
+      <p>نخطط لرحلاتك بدقة فائقة، نضمن لك راحة تامة وتجربة سفر استثنائية تتناسب مع تطلعاتك وميزانيتك</p>
+      <a href="#services" class="whatsapp-btn"
+         style="background: linear-gradient(135deg, var(--olive-dark), var(--sage-green)); padding: 18px 40px; font-size: 18px;">
+        ابدأ رحلتك الآن <i class="fas fa-plane"></i>
+      </a>
     </div>
+  </section>
 
-    <div class="footer-section">
-      <h3>روابط سريعة</h3>
-      <ul style="list-style: none; line-height: 2.5;">
-        <li><a href="index.html" style="color:white; text-decoration:none;">الرئيسية</a></li>
-        <li><a href="services/car-rental.html" style="color:white; text-decoration:none;">تأجير السيارات</a></li>
-        <li><a href="services/driver.html" style="color:white; text-decoration:none;">سائق خاص</a></li>
-        <li><a href="services/honeymoon.html" style="color:white; text-decoration:none;">شهر العسل</a></li>
-        <li><a href="services/tours.html" style="color:white; text-decoration:none;">تنظيم الرحلات</a></li>
-        <li><a href="services/visa.html" style="color:white; text-decoration:none;">التأشيرات</a></li>
-        <li><a href="services/hotel.html" style="color:white; text-decoration:none;">الفنادق</a></li>
-      </ul>
-    </div>
+  <!-- الخدمات -->
+  <div class="container" id="services">
+    <h2 class="section-title">خدماتنا المميزة</h2>
 
-    <div class="footer-section footer-contact">
-      <h3>تواصل معنا</h3>
-      <div class="footer-contact-item">
-        <i class="fas fa-envelope"></i>
-        <span><a href="mailto:sales@roundtripco.net" style="color:white; text-decoration:none;">sales@roundtripco.net</a></span>
-      </div>
-      <div class="footer-contact-item">
-        <i class="fas fa-clock"></i>
-        <span>السبت - الخميس: 9ص - 11م</span>
-      </div>
+    <div class="services">
+      <a class="service-card" href="services/car-rental.html">
+        <div class="service-icon"><i class="fas fa-car"></i></div>
+        <h3>تأجير السيارات</h3>
+        <div class="service-description">خدمات تأجير سيارات بمواصفات عالية في المطارات وأهم المدن حول العالم بأسعار منافسة</div>
+        <span class="service-link">احجز سيارتك <i class="fas fa-arrow-left"></i></span>
+      </a>
+
+      <a class="service-card" href="services/driver/index.html">
+        <div class="service-icon"><i class="fas fa-car-side"></i></div>
+        <h3>تأجير سيارات مع سائق</h3>
+        <div class="service-description">خدمة تأجير سيارات مع سائق خاص، استقبال وتوديع من المطار، جولات سياحية مرنة</div>
+        <span class="service-link">احجز مع سائق <i class="fas fa-arrow-left"></i></span>
+      </a>
+
+      <a class="service-card" href="services/honeymoon/index.html">
+        <div class="service-icon"><i class="fas fa-heart"></i></div>
+        <h3>رحلات شهر العسل</h3>
+        <div class="service-description">باقات خاصة للأزواج مع إضافات رومانسية في أجمل الوجهات العالمية لتجربة لا تُنسى</div>
+        <span class="service-link">احجز رحلة شهر العسل <i class="fas fa-arrow-left"></i></span>
+      </a>
+
+      <a class="service-card" href="services/tours/index.html">
+        <div class="service-icon"><i class="fas fa-suitcase-rolling"></i></div>
+        <h3>تنظيم الرحلات والفعاليات</h3>
+        <div class="service-description">تنظيم برامج سياحية مخصصة، حجوزات تذاكر معالم سياحية وفعاليات وأنشطة ترفيهية</div>
+        <span class="service-link">نظم رحلتك <i class="fas fa-arrow-left"></i></span>
+      </a>
+
+      <a class="service-card" href="services/visa/index.html">
+        <div class="service-icon"><i class="fas fa-passport"></i></div>
+        <h3>تأشيرات السفر</h3>
+        <div class="service-description">خدمات استخراج التأشيرات بكل يسر وسهولة لأغلب دول العالم مع متابعة حتى الاستلام</div>
+        <span class="service-link">استعرض التأشيرات <i class="fas fa-arrow-left"></i></span>
+      </a>
+
+      <a class="service-card" href="services/hotels/index.html">
+        <div class="service-icon"><i class="fas fa-hotel"></i></div>
+        <h3>حجوزات فنادق</h3>
+        <div class="service-description">فنادق ومنتجعات فاخرة تناسب جميع الميزانيات في أهم الوجهات العالمية مع أفضل العروض</div>
+        <span class="service-link">احجز فندقك <i class="fas fa-arrow-left"></i></span>
+      </a>
     </div>
   </div>
 
-  <div class="copyright">
-    <p>© 2026 راوند تريب - جميع الحقوق محفوظة. | تصميم وتطوير: فريق راوند تريب</p>
-    <p style="margin-top:10px; font-size:14px;" class="english-font">ROUND TRIP Travel Agency</p>
-  </div>
-</footer>
+  <!-- الفوتر -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>راوند تريب</h3>
+        <p>خبراء في تنظيم الرحلات السياحية بشكل كامل ، نقدم خدمات حجوزات فنادق وتأشيرات وتأجير سيارات وباقات سياحية مفصلة.</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/roundtripco" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@roundtripco" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.snapchat.com/add/roundtripco" target="_blank" rel="noopener"><i class="fab fa-snapchat"></i></a>
+        </div>
+      </div>
 
-<script src="assets/js/main.js"></script>
+      <div class="footer-section">
+        <h3>روابط سريعة</h3>
+        <ul style="list-style: none; line-height: 2.5;">
+          <li><a href="index.html" style="color: white; text-decoration: none;">الرئيسية</a></li>
+          <li><a href="services/car-rental.html" style="color: white; text-decoration: none;">تأجير السيارات</a></li>
+          <li><a href="services/driver/index.html" style="color: white; text-decoration: none;">سائق خاص</a></li>
+          <li><a href="services/honeymoon/index.html" style="color: white; text-decoration: none;">شهر العسل</a></li>
+          <li><a href="services/tours/index.html" style="color: white; text-decoration: none;">تنظيم الرحلات</a></li>
+          <li><a href="services/visa/index.html" style="color: white; text-decoration: none;">التأشيرات</a></li>
+          <li><a href="services/hotels/index.html" style="color: white; text-decoration: none;">الفنادق</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section footer-contact">
+        <h3>تواصل معنا</h3>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope"></i>
+          <span><a href="mailto:sales@roundtripco.net" style="color: white; text-decoration: none;">sales@roundtripco.net</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-clock"></i>
+          <span>السبت - الخميس: 9ص - 11م</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>© 2026 راوند تريب - جميع الحقوق محفوظة. | تصميم وتطوير: فريق راوند تريب</p>
+      <p style="margin-top: 10px; font-size: 14px;" class="english-font">ROUND TRIP Travel Agency</p>
+    </div>
+  </footer>
+
+  <!-- JS الرئيسي -->
+  <script src="assets/js/main.js?v=1"></script>
 </body>
 </html>
