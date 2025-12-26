@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التأشيرات | راوند تريب</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <a class="logo-container" href="../index.html" style="text-decoration:none">
+    <img src="../assets/images/logo.png" alt="شعار راوند تريب" class="logo" onerror="this.style.display='none'">
+    <div class="company-info">
+      <div class="company-name-ar">راوند تريب</div>
+      <div class="company-name-en english-font">ROUND TRIP</div>
+      <div class="company-tagline">رحلات لا تُنسى، تجارب استثنائية</div>
+    </div>
+  </a>
+
+  <div class="contact-header">
+    <div class="whatsapp-btn pulse" data-whatsapp="96565750302">
+      <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+    </div>
+  </div>
+</header>
+
+<div class="page-header">
+  <h1 class="page-title">خدمات التأشيرات</h1>
+  <p class="page-subtitle">نقدم خدمات استخراج التأشيرات بسرعة واحترافية</p>
+  <a class="back-btn" href="../index.html"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
+</div>
+
+<div class="page-content">
+  <div class="container">
+    <div class="booking-section">
+      <h2 class="section-title">طلب تأشيرة سفر</h2>
+
+      <form id="visaForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="visaName" class="required">الاسم</label>
+            <input type="text" id="visaName" name="visaName" required placeholder="أدخل اسمك">
+          </div>
+
+          <div class="form-group">
+            <label for="visaPhone" class="required" style="text-align:right;">رقم الهاتف</label>
+            <input type="tel" id="visaPhone" name="visaPhone" required placeholder="ادخل رقم الهاتف">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="visaEmail">البريد الإلكتروني (اختياري)</label>
+            <input type="email" id="visaEmail" name="visaEmail" placeholder="name@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="visaNationality" class="required">الجنسية</label>
+            <input type="text" id="visaNationality" name="visaNationality" required placeholder="جنسيتك الحالية">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="visaDestination" class="required">الدولة المراد السفر إليها</label>
+            <input type="text" id="visaDestination" name="visaDestination" required placeholder="الدولة التي تريد السفر إليها">
+          </div>
+
+          <div class="form-group date-time-input">
+            <label for="visaTravelDate" class="required">تاريخ السفر المتوقع</label>
+            <input type="date" id="visaTravelDate" name="visaTravelDate" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="visaPeople" class="required">عدد الأشخاص</label>
+            <input type="number" id="visaPeople" name="visaPeople" min="1" required placeholder="عدد الأشخاص المراد استخراج التأشيرة لهم">
+          </div>
+
+          <div class="form-group">
+            <label for="visaType">نوع التأشيرة المطلوبة</label>
+            <select id="visaType" name="visaType">
+              <option value="">اختر نوع التأشيرة</option>
+              <option value="سياحية">تأشيرة سياحية</option>
+              <option value="عمل">تأشيرة عمل</option>
+              <option value="زيارة">تأشيرة زيارة</option>
+              <option value="علاج">تأشيرة علاج</option>
+              <option value="دراسة">تأشيرة دراسة</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="visaNotes">ملاحظات إضافية</label>
+          <textarea id="visaNotes" name="visaNotes" rows="4" placeholder="أي تفاصيل إضافية أو طلبات خاصة..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fab fa-whatsapp whatsapp-icon"></i> إرسال طلب التأشيرة
+        </button>
+      </form>
+
+      <div class="form-instructions">
+        <h4><i class="fas fa-info-circle"></i> كيفية إكمال الحجز:</h4>
+        <ol>
+          <li>املأ جميع البيانات المطلوبة في النموذج أعلاه</li>
+          <li>اضغط على زر "إرسال طلب التأشيرة"</li>
+          <li>سيتم فتح تطبيق واتساب على جهازك تلقائياً</li>
+          <li>ستجد الرسالة جاهزة مع كل بياناتك، فقط اضغط "إرسال"</li>
+          <li>سنتصل بك خلال 24 ساعة لتأكيد الحجز وتفاصيل الدفع</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer"><div class="copyright"><p>© 2026 راوند تريب - جميع الحقوق محفوظة.</p></div></footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
