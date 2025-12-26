@@ -1,250 +1,85 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الفنادق | راوند تريب</title>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>راوند تريب | الفنادق</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
 <body>
 
-<header class="header">
-  <a class="logo-container" href="../index.html" style="text-decoration:none">
-    <img src="../assets/images/logo.png" alt="شعار راوند تريب" class="logo" onerror="this.style.display='none'">
-    <div class="company-info">
-      <div class="company-name-ar">راوند تريب</div>
-      <div class="company-name-en english-font">ROUND TRIP</div>
-      <div class="company-tagline">رحلات لا تُنسى، تجارب استثنائية</div>
-    </div>
-  </a>
-
-  <div class="contact-header">
-    <div class="whatsapp-btn pulse" data-whatsapp="96565750302">
-      <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
-    </div>
-  </div>
-</header>
-
-<div class="page-header">
-  <h1 class="page-title">حجوزات الفنادق</h1>
-  <p class="page-subtitle">فنادق ومنتجعات فاخرة في أهم الوجهات العالمية</p>
-  <a class="back-btn" href="../index.html"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
-</div>
-
-<div class="page-content">
-  <div class="container">
-    <div class="booking-section">
-      <h2 class="section-title">طلب حجز فندق</h2>
-
-      <form id="hotelForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="hotelName" class="required">الاسم</label>
-            <input type="text" id="hotelName" name="hotelName" required placeholder="أدخل اسمك">
-          </div>
-
-          <div class="form-group">
-            <label for="hotelPhone" class="required" style="text-align:right;">رقم الهاتف</label>
-            <input type="tel" id="hotelPhone" name="hotelPhone" required placeholder="ادخل رقم الهاتف">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="hotelEmail">البريد الإلكتروني (اختياري)</label>
-            <input type="email" id="hotelEmail" name="hotelEmail" placeholder="name@example.com">
-          </div>
-
-          <div class="form-group">
-            <label for="hotelDestination" class="required">الوجهة</label>
-            <input type="text" id="hotelDestination" name="hotelDestination" required placeholder="المدينة والبلد">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group date-time-input">
-            <label for="hotelCheckIn" class="required">تاريخ الوصول</label>
-            <input type="date" id="hotelCheckIn" name="hotelCheckIn" required>
-          </div>
-
-          <div class="form-group date-time-input">
-            <label for="hotelCheckOut" class="required">تاريخ المغادرة</label>
-            <input type="date" id="hotelCheckOut" name="hotelCheckOut" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="hotelRooms" class="required">عدد الغرف</label>
-            <select id="hotelRooms" name="hotelRooms" required onchange="toggleRoomOccupancy(this.value)">
-              <option value="">اختر عدد الغرف</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="hotelChildren">عدد الأطفال</label>
-            <select id="hotelChildren" name="hotelChildren" onchange="toggleChildrenAges(this.value)">
-              <option value="0">0 - لا يوجد أطفال</option>
-            </select>
-          </div>
-        </div>
-
-        <div id="roomOccupancyContainer" class="room-occupancy">
-          <label>توزيع الأشخاص على الغرف</label>
-          <div id="roomOccupancyInputs"></div>
-        </div>
-
-        <div id="childrenAgesContainer" class="children-ages-container">
-          <label>أعمار الأطفال</label>
-          <div id="childrenAgeInputs"></div>
-        </div>
-
-        <div class="form-group">
-          <label for="hotelType">نوع الفندق المفضل</label>
-          <select id="hotelType" name="hotelType">
-            <option value="">اختر نوع الفندق</option>
-            <option value="5 نجوم">5 نجوم</option>
-            <option value="4 نجوم">4 نجوم</option>
-            <option value="3 نجوم">3 نجوم</option>
-            <option value="منتجع">منتجع</option>
-            <option value="شقة فندقية">شقة فندقية</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="hotelSpecialRequests">طلبات خاصة</label>
-          <textarea id="hotelSpecialRequests" name="hotelSpecialRequests" rows="4" placeholder="أي طلبات خاصة مثل: سرير إضافي، مطلوب جناح، إطلالة..."></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">
-          <i class="fab fa-whatsapp whatsapp-icon"></i> إرسال طلب حجز الفندق
-        </button>
-      </form>
-
-      <div class="form-instructions">
-        <h4><i class="fas fa-info-circle"></i> كيفية إكمال الحجز:</h4>
-        <ol>
-          <li>املأ جميع البيانات المطلوبة في النموذج أعلاه</li>
-          <li>اضغط على زر "إرسال طلب حجز الفندق"</li>
-          <li>سيتم فتح تطبيق واتساب على جهازك تلقائياً</li>
-          <li>ستجد الرسالة جاهزة مع كل بياناتك، فقط اضغط "إرسال"</li>
-          <li>سنتصل بك خلال 24 ساعة لتأكيد الحجز وتفاصيل الدفع</li>
-        </ol>
+  <header class="header">
+    <div class="logo-container" onclick="location.href='../../index.html'">
+      <img src="../../logo.png" class="logo" alt="Round Trip" onerror="this.style.display='none'">
+      <div class="company-info">
+        <div class="company-name-ar">راوند تريب</div>
+        <div class="company-name-en english-font">ROUND TRIP</div>
+        <div class="company-tagline">رحلات لا تُنسى، تجارب استثنائية</div>
       </div>
     </div>
+  </header>
+
+  <div class="page-header">
+    <h1 class="page-title">حجوزات الفنادق</h1>
+    <p class="page-subtitle">فنادق ومنتجعات فاخرة في أهم الوجهات العالمية</p>
+    <button class="back-btn" onclick="location.href='../../index.html'">
+      العودة للرئيسية
+    </button>
   </div>
-</div>
 
-<footer class="footer"><div class="copyright"><p>© 2026 راوند تريب - جميع الحقوق محفوظة.</p></div></footer>
+  <main class="page-content">
+    <div class="container">
+      <div class="booking-section">
+        <h2 class="section-title">طلب حجز فندق</h2>
 
-<script src="../assets/js/main.js"></script>
-<script>
-function toggleChildrenAges(count) {
-  count = parseInt(count || 0);
-  const container = document.getElementById('childrenAgesContainer');
-  const inputs = document.getElementById('childrenAgeInputs');
-
-  if (count > 0) {
-    container.style.display = 'block';
-    inputs.innerHTML = '';
-    for (let i = 1; i <= count; i++) {
-      const wrap = document.createElement('div');
-      wrap.className = 'age-select-group';
-      wrap.innerHTML = `
-        <div>
-          <label for="hotelChildAge${i}">عمر الطفل ${i}</label>
-          <select id="hotelChildAge${i}" name="hotelChildAge${i}" required>
-            <option value="">اختر العمر</option>
-            ${Array.from({length:12}, (_,k)=>k+1).map(n=>`<option value="${n}">${n} ${n===1?'سنة':'سنوات'}</option>`).join('')}
-          </select>
-        </div>
-      `;
-      inputs.appendChild(wrap);
-    }
-  } else {
-    container.style.display = 'none';
-    inputs.innerHTML = '';
-  }
-}
-
-function toggleRoomOccupancy(roomCount) {
-  roomCount = parseInt(roomCount || 0);
-  const container = document.getElementById('roomOccupancyContainer');
-  const inputs = document.getElementById('roomOccupancyInputs');
-
-  if (roomCount > 1) {
-    container.style.display = 'block';
-    inputs.innerHTML = '';
-
-    for (let i = 1; i <= roomCount; i++) {
-      const roomItem = document.createElement('div');
-      roomItem.className = 'room-occupancy-item';
-      roomItem.innerHTML = `
-        <h5>الغرفة ${i}</h5>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="room${i}Adults">عدد البالغين</label>
-            <select id="room${i}Adults" name="room${i}Adults" required>
-              <option value="">اختر عدد البالغين</option>
-              ${Array.from({length:8}, (_,k)=>k+1).map(n=>`<option value="${n}">${n} بالغ</option>`).join('')}
-            </select>
+        <form id="hotelForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required">الاسم</label>
+              <input type="text" name="hotelName" required placeholder="أدخل اسمك">
+            </div>
+            <div class="form-group">
+              <label class="required">رقم الهاتف</label>
+              <input type="tel" name="hotelPhone" required placeholder="ادخل رقم الهاتف">
+            </div>
           </div>
-          <div class="form-group">
-            <label for="room${i}Children">عدد الأطفال</label>
-            <select id="room${i}Children" name="room${i}Children" onchange="toggleRoomChildAges(${i}, this.value)">
-              <option value="0">0 - لا يوجد أطفال</option>
-              <option value="1">1 طفل</option>
-              <option value="2">2 أطفال</option>
-              <option value="3">3 أطفال</option>
-            </select>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>البريد الإلكتروني (اختياري)</label>
+              <input type="email" name="hotelEmail" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label class="required">الوجهة</label>
+              <input type="text" name="hotelDestination" required placeholder="المدينة والبلد">
+            </div>
           </div>
-        </div>
-        <div id="room${i}ChildrenAges" class="children-ages-container" style="display:none; margin-top:10px;">
-          <label>أعمار الأطفال في الغرفة ${i}</label>
-          <div id="room${i}ChildAgeInputs"></div>
-        </div>
-      `;
-      inputs.appendChild(roomItem);
-    }
-  } else {
-    container.style.display = 'none';
-    inputs.innerHTML = '';
-  }
-}
 
-function toggleRoomChildAges(roomNumber, count) {
-  count = parseInt(count || 0);
-  const container = document.getElementById(`room${roomNumber}ChildrenAges`);
-  const inputs = document.getElementById(`room${roomNumber}ChildAgeInputs`);
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required">تاريخ الوصول</label>
+              <input type="date" name="hotelCheckIn" required>
+            </div>
+            <div class="form-group">
+              <label class="required">تاريخ المغادرة</label>
+              <input type="date" name="hotelCheckOut" required>
+            </div>
+          </div>
 
-  if (count > 0) {
-    container.style.display = 'block';
-    inputs.innerHTML = '';
-    for (let i = 1; i <= count; i++) {
-      const wrap = document.createElement('div');
-      wrap.className = 'age-select-group';
-      wrap.innerHTML = `
-        <div>
-          <label for="room${roomNumber}ChildAge${i}">عمر الطفل ${i}</label>
-          <select id="room${roomNumber}ChildAge${i}" name="room${roomNumber}ChildAge${i}" required>
-            <option value="">اختر العمر</option>
-            ${Array.from({length:12}, (_,k)=>k+1).map(n=>`<option value="${n}">${n} ${n===1?'سنة':'سنوات'}</option>`).join('')}
-          </select>
-        </div>
-      `;
-      inputs.appendChild(wrap);
-    }
-  } else {
-    container.style.display = 'none';
-    inputs.innerHTML = '';
-  }
-}
-</script>
+          <div class="form-group">
+            <label>طلبات خاصة</label>
+            <textarea name="hotelSpecialRequests" rows="4" placeholder="مثال: إطلالة، سرير إضافي..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">إرسال طلب حجز الفندق</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
