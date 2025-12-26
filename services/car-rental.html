@@ -1,309 +1,132 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تأجير السيارات | راوند تريب</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Round Trip | تأجير السيارات</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- مهم: لأن الملف داخل services -->
+  <link rel="stylesheet" href="../assets/css/style.css?v=1" />
 </head>
+
 <body>
-
-<header class="header">
-  <a class="logo-container" href="../index.html" style="text-decoration:none">
-    <img src="../assets/images/logo.png" alt="شعار راوند تريب" class="logo" onerror="this.style.display='none'">
-    <div class="company-info">
-      <div class="company-name-ar">راوند تريب</div>
-      <div class="company-name-en english-font">ROUND TRIP</div>
-      <div class="company-tagline">رحلات لا تُنسى، تجارب استثنائية</div>
-    </div>
-  </a>
-
-  <div class="contact-header">
-    <div class="whatsapp-btn pulse" data-whatsapp="96565750302">
-      <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
-    </div>
-  </div>
-</header>
-
-<div class="page-header">
-  <h1 class="page-title">تأجير السيارات</h1>
-  <p class="page-subtitle">اختر من مجموعة واسعة من السيارات الفاخرة والاقتصادية في جميع أنحاء العالم</p>
-  <a class="back-btn" href="../index.html"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
-</div>
-
-<div class="page-content">
-  <div class="container">
-    <div class="booking-section">
-      <h2 class="section-title">طلب تأجير سيارة</h2>
-
-      <form id="carRentalForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="carName" class="required">الاسم</label>
-            <input type="text" id="carName" name="carName" required placeholder="أدخل اسمك">
-          </div>
-
-          <div class="form-group">
-            <label for="carPhone" class="required" style="text-align:right;">رقم الهاتف</label>
-            <input type="tel" id="carPhone" name="carPhone" required placeholder="ادخل رقم الهاتف">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="carEmail">البريد الإلكتروني (اختياري)</label>
-            <input type="email" id="carEmail" name="carEmail" placeholder="name@example.com">
-          </div>
-
-          <div class="form-group">
-            <label for="pickupLocation" class="required">مكان الاستلام</label>
-            <input type="text" id="pickupLocation" name="pickupLocation" required placeholder="المدينة والدولة">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group date-time-input">
-            <label for="pickupDate" class="required">تاريخ الاستلام</label>
-            <input type="date" id="pickupDate" name="pickupDate" required>
-          </div>
-
-          <div class="form-group date-time-input time-input">
-            <label for="pickupTime" class="required">وقت الاستلام</label>
-            <input type="time" id="pickupTime" name="pickupTime" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>مكان التسليم</label>
-          <div class="return-options">
-            <div class="return-option" onclick="selectReturnOption('same')">
-              <i class="fas fa-check-circle"></i>
-              <div>نفس مكان الاستلام</div>
-            </div>
-            <div class="return-option" onclick="selectReturnOption('different')">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>مكان آخر</div>
-            </div>
-          </div>
-          <input type="hidden" id="returnOption" name="returnOption" value="">
-          <div id="returnLocationContainer" style="display:none; margin-top:15px;">
-            <input type="text" id="returnLocation" name="returnLocation" placeholder="أدخل مكان التسليم">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group date-time-input">
-            <label for="returnDate" class="required">تاريخ التسليم</label>
-            <input type="date" id="returnDate" name="returnDate" required>
-          </div>
-
-          <div class="form-group date-time-input time-input">
-            <label for="returnTime" class="required">وقت التسليم</label>
-            <input type="time" id="returnTime" name="returnTime" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="carType">نوع السيارة المفضل</label>
-          <select id="carType" name="carType">
-            <option value="">اختر نوع السيارة</option>
-            <option value="سيارة صغيرة - متوسطة">سيارة صغيرة - متوسطة</option>
-            <option value="SUV جيب">SUV جيب</option>
-            <option value="فان 8-9 راكب">فان 8-9 راكب</option>
-          </select>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="driverAge" class="required">عمر السائق</label>
-            <select id="driverAge" name="driverAge" required>
-              <option value="">اختر عمر السائق</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="totalAdults" class="required">عدد البالغين (+12 سنة)</label>
-            <select id="totalAdults" name="totalAdults" required onchange="checkPassengerLimit()">
-              <option value="">اختر عدد البالغين</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="childrenCount">عدد الأطفال (إذا وجد)</label>
-            <select id="childrenCount" name="childrenCount" onchange="toggleChildAges(this.value); checkPassengerLimit()">
-              <option value="0">0 - لا يوجد أطفال</option>
-            </select>
-          </div>
-
-          <div id="childAgeGroup" class="child-age-group">
-            <label>أعمار الأطفال</label>
-            <div id="childAgeInputs"></div>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="largeBags">عدد الشنط الكبيرة</label>
-            <select id="largeBags" name="largeBags">
-              <option value="0">0</option><option value="1">1</option><option value="2">2</option>
-              <option value="3">3</option><option value="4">4</option><option value="5">5 أو أكثر</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="smallBags">عدد الشنط الصغيرة</label>
-            <select id="smallBags" name="smallBags">
-              <option value="0">0</option><option value="1">1</option><option value="2">2</option>
-              <option value="3">3</option><option value="4">4</option><option value="5">5 أو أكثر</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="otherCountries">دول أخرى ستزورونها غير بلد الاستلام والتسليم</label>
-          <input type="text" id="otherCountries" name="otherCountries" placeholder="اذكر الدول الأخرى التي ستزورها خلال الرحلة">
-        </div>
-
-        <div class="form-group">
-          <label>طريقة الدفع المفضلة (يمكن اختيار أكثر من واحد)</label>
-          <div class="checkbox-group">
-            <div class="checkbox-item">
-              <input type="checkbox" id="paymentVisa" name="paymentMethod" value="فيزا ائتمانيه">
-              <label for="paymentVisa">فيزا ائتمانيه</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" id="paymentPrepaid" name="paymentMethod" value="تعبئة">
-              <label for="paymentPrepaid">تعبئة</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" id="paymentCash" name="paymentMethod" value="كاش">
-              <label for="paymentCash">كاش</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" id="paymentElectronic" name="paymentMethod" value="الكترونيه">
-              <label for="paymentElectronic">الكترونيه</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="carNotes">ملاحظات إضافية</label>
-          <textarea id="carNotes" name="carNotes" rows="4" placeholder="أي تفاصيل إضافية أو طلبات خاصة..."></textarea>
-        </div>
-
-        <div id="passengerLimitError" class="error-message" style="display:none;"></div>
-
-        <button type="submit" class="submit-btn">
-          <i class="fab fa-whatsapp whatsapp-icon"></i> إرسال طلب تأجير السيارة
-        </button>
-      </form>
-
-      <div class="terms-section">
-        <h3><i class="fas fa-file-contract"></i> الشروط العامة لتأجير السيارات</h3>
-        <ul class="terms-list">
-          <li><i class="fas fa-check-circle"></i> <strong>الحد الأدنى للعمر:</strong> يجب أن يكون عمر السائق 19 سنة أو أكثر قد يتطلب عمر أكبر لبعض المدن والسيارات</li>
-          <li><i class="fas fa-check-circle"></i> <strong>المستندات المطلوبة:</strong> الرخصة المحلية - الرخصة الدولية - جواز السفر</li>
-          <li><i class="fas fa-check-circle"></i> <strong>التأمين:</strong> يشمل السعر تأميناً شاملاً ضد الحوادث والسرقة</li>
-          <li><i class="fas fa-check-circle"></i> <strong>الوديعة:</strong> قد يتم طلب وديعــة مستردة عند استلام السيارة</li>
-          <li><i class="fas fa-check-circle"></i> <strong>الوقود:</strong> يتم تسليم السيارة بوقود كامل ويجب إرجاعها بنفس الحالة</li>
-          <li><i class="fas fa-check-circle"></i> <strong>المسافة المقطوعة:</strong> جميع السيارات عداد مفتوح</li>
-          <li><i class="fas fa-check-circle"></i> <strong>الممنوعات:</strong> يحظر التدخين أو قيادة السيارة تحت تأثير أي مواد مخدرة</li>
-          <li><i class="fas fa-check-circle"></i> <strong>التسليم والاستلام:</strong> متوفر في المطار أو العنوان المطلوب</li>
-          <li><i class="fas fa-check-circle"></i> <strong>الأطفال:</strong> يجب ابلاغنا بوجود الأطفال تحت 10 سنوات لضرورة توفير الكرسي</li>
-          <li><i class="fas fa-check-circle"></i> <strong>النظافة:</strong> يجب اعادة السيارة بحالة نظيفة</li>
-        </ul>
+  <header class="header">
+    <div class="logo-container" onclick="window.location.href='../index.html'">
+      <img src="../assets/logo.png" alt="Round Trip" class="logo" onerror="this.style.display='none'">
+      <div class="company-info">
+        <div class="company-name-ar">راوند تريب</div>
+        <div class="company-name-en english-font">ROUND TRIP</div>
+        <div class="company-tagline">رحلات لا تُنسى، تجارب استثنائية</div>
       </div>
-
-      <div class="form-instructions">
-        <h4><i class="fas fa-info-circle"></i> كيفية إكمال الحجز:</h4>
-        <ol>
-          <li>املأ جميع البيانات المطلوبة في النموذج أعلاه</li>
-          <li>اضغط على زر "إرسال طلب تأجير السيارة"</li>
-          <li>سيتم فتح تطبيق واتساب على جهازك تلقائياً</li>
-          <li>ستجد الرسالة جاهزة مع كل بياناتك، فقط اضغط "إرسال"</li>
-          <li>سنتصل بك خلال 24 ساعة لتأكيد الحجز وتفاصيل الدفع</li>
-        </ol>
-      </div>
-
     </div>
+
+    <div class="contact-header">
+      <a class="whatsapp-btn" href="https://wa.me/96565750302" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+      </a>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1 class="page-title">تأجير السيارات</h1>
+    <p class="page-subtitle">اختر سيارتك بالمطار أو أي مدينة… وخل الباقي علينا</p>
+    <a class="back-btn" href="../index.html"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
   </div>
-</div>
 
-<footer class="footer">
-  <div class="copyright">
-    <p>© 2026 راوند تريب - جميع الحقوق محفوظة.</p>
-  </div>
-</footer>
+  <main class="page-content">
+    <div class="container">
+      <div class="booking-section">
+        <h2 class="section-title">طلب تأجير سيارة</h2>
 
-<script src="../assets/js/main.js"></script>
-<script>
-function selectReturnOption(option) {
-  const options = document.querySelectorAll('.return-option');
-  options.forEach(opt => opt.classList.remove('selected'));
+        <form id="carForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required" for="name">الاسم</label>
+              <input id="name" name="name" required placeholder="أدخل اسمك">
+            </div>
+            <div class="form-group">
+              <label class="required" for="phone">رقم الهاتف</label>
+              <input id="phone" name="phone" required placeholder="ادخل رقم الهاتف">
+            </div>
+          </div>
 
-  if (option === 'same') {
-    options[0].classList.add('selected');
-    document.getElementById('returnOption').value = 'same';
-    document.getElementById('returnLocationContainer').style.display = 'none';
-    const pickupLocation = document.getElementById('pickupLocation').value;
-    document.getElementById('returnLocation').value = pickupLocation || 'نفس مكان الاستلام';
-  } else {
-    options[1].classList.add('selected');
-    document.getElementById('returnOption').value = 'different';
-    document.getElementById('returnLocationContainer').style.display = 'block';
-    document.getElementById('returnLocation').value = '';
-    document.getElementById('returnLocation').focus();
-  }
-}
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required" for="pickup">مكان الاستلام</label>
+              <input id="pickup" name="pickup" required placeholder="المدينة والدولة">
+            </div>
+            <div class="form-group">
+              <label class="required" for="dropoff">مكان التسليم</label>
+              <input id="dropoff" name="dropoff" required placeholder="نفس مكان الاستلام أو مدينة ثانية">
+            </div>
+          </div>
 
-function toggleChildAges(count) {
-  const childAgeGroup = document.getElementById('childAgeGroup');
-  const childAgeInputs = document.getElementById('childAgeInputs');
-  count = parseInt(count || 0);
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required" for="pickupDate">تاريخ الاستلام</label>
+              <input type="date" id="pickupDate" name="pickupDate" required>
+            </div>
+            <div class="form-group">
+              <label class="required" for="returnDate">تاريخ التسليم</label>
+              <input type="date" id="returnDate" name="returnDate" required>
+            </div>
+          </div>
 
-  if (count > 0) {
-    childAgeGroup.style.display = 'block';
-    childAgeInputs.innerHTML = '';
-    for (let i = 1; i <= count; i++) {
-      const ageSelect = document.createElement('div');
-      ageSelect.className = 'form-group';
-      ageSelect.innerHTML = `
-        <label for="childAge${i}">عمر الطفل ${i}</label>
-        <select id="childAge${i}" name="childAge${i}" required>
-          <option value="">اختر العمر</option>
-          ${Array.from({length:10}, (_,k)=>k+1).map(n=>`<option value="${n}">${n} ${n===1?'سنة':'سنوات'}</option>`).join('')}
-        </select>
-      `;
-      childAgeInputs.appendChild(ageSelect);
-    }
-  } else {
-    childAgeGroup.style.display = 'none';
-    childAgeInputs.innerHTML = '';
-  }
-}
+          <div class="form-row">
+            <div class="form-group">
+              <label for="carType">نوع السيارة</label>
+              <select id="carType" name="carType">
+                <option value="">اختر</option>
+                <option>سيارة صغيرة - متوسطة</option>
+                <option>SUV جيب</option>
+                <option>فان 8-9 راكب</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="notes">ملاحظات</label>
+              <input id="notes" name="notes" placeholder="أي تفاصيل إضافية">
+            </div>
+          </div>
 
-function checkPassengerLimit() {
-  const totalAdults = parseInt(document.getElementById('totalAdults').value) || 0;
-  const childrenCount = parseInt(document.getElementById('childrenCount').value) || 0;
-  const totalPassengers = totalAdults + childrenCount;
-  const errorElement = document.getElementById('passengerLimitError');
+          <button class="submit-btn" type="submit">
+            <i class="fab fa-whatsapp"></i> إرسال الطلب على واتساب
+          </button>
+        </form>
 
-  if (totalPassengers > 9) {
-    errorElement.style.display = 'block';
-    errorElement.textContent = `❌ الخطأ: عدد الركاب ${totalPassengers} يتجاوز الحد الأقصى (9 ركاب). إذا كنت بحاجة إلى أكثر من 9 ركاب، يرجى الاتصال بنا مباشرة لتأجير سيارتين.`;
-    return false;
-  }
-  errorElement.style.display = 'none';
-  return true;
-}
-</script>
+        <div class="form-instructions">
+          <h4><i class="fas fa-info-circle"></i> بعد الإرسال</h4>
+          <ol>
+            <li>يفتح واتساب والرسالة جاهزة</li>
+            <li>بس اضغط إرسال</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/main.js?v=1"></script>
+  <script>
+    document.getElementById("carForm").addEventListener("submit", (e)=>{
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(e.target).entries());
+      const msg =
+`طلب تأجير سيارة - راوند تريب
+
+الاسم: ${d.name}
+رقم: ${d.phone}
+الاستلام: ${d.pickup}
+التسليم: ${d.dropoff}
+تاريخ الاستلام: ${d.pickupDate}
+تاريخ التسليم: ${d.returnDate}
+نوع السيارة: ${d.carType || "غير محدد"}
+ملاحظات: ${d.notes || "لا يوجد"}`;
+      sendToWhatsApp(msg);
+    });
+  </script>
 </body>
 </html>
